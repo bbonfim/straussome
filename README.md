@@ -2,6 +2,8 @@
 
 A simple agent orchestration system built with FastAPI and LangGraph. This system enables you to run agents in isolation while allowing them to pass results to each other, with built-in support for concurrency, retries, timeouts, and pluggable tools.
 
+[▶️ Check out the video overview](https://www.loom.com/share/7fdaa68aa09a49e7befeaa37f0828c0f?sid=e826b74e-8c2c-4b0a-999a-da6f0a8a61c2)
+
 ## 🚀 Features
 
 - **Agent Isolation**: Agents run in complete isolation but can pass results to subsequent agents
@@ -33,7 +35,7 @@ Because of time constraints, here are some trade-offs made:
 
 1. **Clone the repository**:
    ```bash
-   git clone <repository-url>
+   git clone git@github.com:bbonfim/straussome.git
    cd straussome
    ```
 
@@ -42,13 +44,7 @@ Because of time constraints, here are some trade-offs made:
    pip install -r requirements.txt
    ```
 
-3. **Set up environment variables**:
-   ```bash
-   cp env.example .env
-   # Edit .env with your configuration
-   ```
-
-4. **Run the application**:
+3. **Run the application**:
    ```bash
    python main.py
    ```
@@ -103,7 +99,7 @@ curl -X POST "http://localhost:8000/api/v1/tasks" \
 
 #### Get Task Status
 ```bash
-curl -X GET "http://localhost:8000/api/v1/tasks/{task_id}" \
+curl -X GET "http://localhost:8000/api/v1/tasks/914aa9e2-bbf3-4f38-a42f-6076115a6ede" \
   -H "Content-Type: application/json"
 ```
 
