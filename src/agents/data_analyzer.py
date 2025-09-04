@@ -41,7 +41,6 @@ class DataAnalysisAgent(BaseAgent):
                         
                         # Analyze the fetched data
                         analysis_result = self._analyze_data(raw_data)
-                        self.logger.info(f"Analysis result: {analysis_result}")
                     else:
                         self.logger.warning(f"Data fetch failed: {fetch_result.error}")
                         # Fall back to mock data

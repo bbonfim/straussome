@@ -81,8 +81,6 @@ class ChartGenerationAgent(BaseAgent):
             else:
                 self.logger.warning("No tool registry available, using mock charts")
                 charts = self._get_mock_charts(analysis_result, state.task_id)
-            
-            self.logger.info(f"Generated charts: {charts}")
 
             # Store result
             state.shared_data[f"{self.agent_id}_result"] = charts
