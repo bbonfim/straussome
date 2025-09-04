@@ -21,3 +21,9 @@ class BaseAgent:
         if self.tool_registry:
             return self.tool_registry.get_tool(tool_name)
         return None
+    
+    async def cleanup(self):
+        """Cleanup resources after agent execution"""
+        # Default implementation - subclasses can override for specific cleanup
+        self.logger.debug(f"Cleaning up agent {self.agent_id}")
+        pass

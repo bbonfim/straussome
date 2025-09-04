@@ -48,7 +48,7 @@ class ChartGenerationAgent(BaseAgent):
                             x_column="User ID",
                             y_column="Posts"
                         )
-                        self.logger.info(f"Bar result: {bar_result}")
+
                         if bar_result.status.value == "completed":
                             charts["user_distribution_bar"] = {
                                 "type": "bar",
@@ -85,7 +85,6 @@ class ChartGenerationAgent(BaseAgent):
             # Store result
             state.shared_data[f"{self.agent_id}_result"] = charts
             state.shared_data["charts_generated"] = True
-            self.logger.info(f"Results from chart generation: {charts}")
             self.logger.info(f"Chart generation completed for task {state.task_id}")
             return state
             

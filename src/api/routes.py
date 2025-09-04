@@ -157,7 +157,7 @@ async def execute_task_background(
                 error=agent_result.error,
                 execution_time=agent_result.execution_time,
                 retry_count=agent_result.retry_count,
-                metadata=agent_result.metadata
+                metadata=agent_result.metadata or {}
             )
         
         # Update task storage
@@ -200,7 +200,7 @@ async def get_task_status(task_id: str) -> TaskStatusResponse:
             error=agent_result.error,
             execution_time=agent_result.execution_time,
             retry_count=agent_result.retry_count,
-            metadata=agent_result.metadata
+            metadata=agent_result.metadata or {}
         )
     
     return TaskStatusResponse(
@@ -265,7 +265,7 @@ async def list_tasks(limit: int = 50, offset: int = 0):
                 error=agent_result.error,
                 execution_time=agent_result.execution_time,
                 retry_count=agent_result.retry_count,
-                metadata=agent_result.metadata
+                metadata=agent_result.metadata or {}
             )
         
         result.append(TaskStatusResponse(

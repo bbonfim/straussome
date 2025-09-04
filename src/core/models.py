@@ -38,6 +38,11 @@ class AgentResult:
     execution_time: float = 0.0
     retry_count: int = 0
     metadata: Dict[str, Any] = None
+    
+    def __post_init__(self):
+        """Initialize metadata as empty dict if None"""
+        if self.metadata is None:
+            self.metadata = {}
 
 
 @dataclass
