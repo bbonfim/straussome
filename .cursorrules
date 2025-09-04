@@ -1,0 +1,41 @@
+# Cursor Rules for Agent Orchestrator Project
+
+## Project Overview
+This is an Agent Orchestrator system built with FastAPI and LangGraph that enables:
+- Agent isolation with result passing
+- Concurrency control and retry logic
+- Pluggable tools system
+- Clear API for frontend consumption
+
+## Key Components
+- `src/core/orchestrator.py` - Main orchestration engine
+- `src/tools/` - Pluggable tools (data fetcher, chart generator, LLM)
+- `src/agents/` - Example agent implementations
+- `src/api/` - FastAPI endpoints and models
+- `src/config/` - Configuration management
+
+## Architecture Patterns
+- Agents run in isolation but can pass results through shared state
+- LangGraph manages agent execution flow
+- Pydantic models for data validation
+- Async/await for concurrent execution
+- Structured logging with JSON format
+
+## Development Guidelines
+- Follow async/await patterns
+- Use Pydantic models for data validation
+- Implement proper error handling with custom exceptions
+- Use structured logging for better debugging
+- Follow the existing agent and tool patterns
+
+## API Endpoints
+- POST /api/v1/tasks - Create tasks
+- GET /api/v1/tasks/{id} - Get task status
+- GET /api/v1/tasks/{id}/result - Get task results
+- POST /api/v1/tools/{name}/execute - Execute tools directly
+
+## Common Patterns
+- Agent classes inherit from BaseAgent
+- Tool classes inherit from BaseTool
+- State management through AgentState
+- Error handling with OrchestratorError hierarchy
