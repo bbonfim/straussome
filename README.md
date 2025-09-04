@@ -34,7 +34,7 @@ Because of time constraints, here are some trade-offs made:
 1. **Clone the repository**:
    ```bash
    git clone <repository-url>
-   cd strauss
+   cd straussome
    ```
 
 2. **Install dependencies**:

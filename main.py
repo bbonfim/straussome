@@ -1,5 +1,5 @@
 """
-Main entry point for Strauss
+Main entry point for Straussome
 """
 
 import logging
