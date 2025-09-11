@@ -19,7 +19,7 @@ class BaseAgent:
     def get_tool(self, tool_name: str):
         """Get a tool from the registry"""
         if self.tool_registry:
-            return self.tool_registry.get_tool(tool_name)
+            return self.tool_registry.get(tool_name)
         return None
     
     async def cleanup(self):
